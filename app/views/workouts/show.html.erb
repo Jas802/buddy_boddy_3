@@ -1,0 +1,16 @@
+<div class="center">
+
+  <div class="info">
+    <p><strong>Title:</strong> <%= @workout.title %></p>
+    <p><strong>Workout Length:</strong> <%= @workout.length %> minutes</p>
+    <p><strong>Workout Difficulty:</strong> <%= @workout.difficulty %></p>
+    <p><strong>Description:</strong> <%=@workout.description %></p>
+    <p><strong>Instructor:</strong> <%= link_to "#{@workout.trainer.name}", trainer_path(@workout.trainer) %></p>
+      <%= form_tag ("/workouts/add_to_workouts/#{@workout.id}") do %>
+        <input type="submit" value="Add To My Workouts" class="btn btn-light" >
+      <% end %>
+  </div>
+
+</div>
+  <%= button_to "Edit Workout", edit_workout_path(@workout) %>
+  <%= button_to "Remove workout", delete_path(@workout), method: :delete %>

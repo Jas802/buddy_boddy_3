@@ -1,0 +1,34 @@
+<%= form_for(object) do |f| %>
+  <% if @workout.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@workout.errors.count, "error") %> prohibited this workout from being created:
+      </h2>
+
+      <ul>
+      <% @workout.errors.full_messages.each do |msg| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<%= form_for(object) do |f|%>
+
+<%= f.label :title%><br>
+<%= f.text_field :title, placeholder: :title %>
+<br>
+<%= f.label :length%><br> 
+<%= f.text_field :length, placeholder: :length_in_minutes %>
+<br>
+<%= f.label :difficulty%><br>
+<%= f.text_field :difficulty, placeholder: :rating_1_to_5 %>
+<br>
+<%= f.label :description%><br>
+<%= f.text_area :description, placeholder: :workout_descriprion %>
+<br>
+<%= f.hidden_field :user_id %><br />
+<%= f.hidden_field :trainer_id %><br />
+<%= f.submit %>
+<% end %>
+<%end%>

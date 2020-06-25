@@ -1,0 +1,10 @@
+<div class="text-center">
+<h1> Buddy Boddy's Trainers! </h1>
+</div>
+<br>
+<%@trainers.each do |trainer|%>
+    <%=trainer.name%>
+    <%=link_to "Trainer's Bio", trainer_path(trainer) %>
+    <% end %><br>
+
+<%= link_to "New Trainer", 'trainers/new'%>

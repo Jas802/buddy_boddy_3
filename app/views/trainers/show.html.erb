@@ -1,0 +1,21 @@
+<div class="jumbotron text-center">
+<h2> <%= @trainer.name %> </h2>
+</div>
+<br>
+<div class="text-center">
+<h3> Bio </h3>
+<p class="font-italic"> <%= @trainer.bio%> </p>
+</div>
+<br>
+<%= link_to "#{@trainer.name}'s workouts", trainer_workouts_path(@trainer) %><br>
+<%= link_to "New workout with #{@trainer.name}", new_trainer_workout_path(@trainer) %><br>
+<div class="text-center">
+<h3> <%= "#{@trainer.name}'s most challenging workouts" %> </h3>
+</div>
+<div class="text-center">
+<% @trainer.most_difficult_workouts.each do |workout| %>
+<ul>
+    <%= link_to "#{workout.title}", workout_path(workout) %>
+</ul>    
+<%end%>
+</div>

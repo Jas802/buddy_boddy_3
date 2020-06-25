@@ -1,0 +1,14 @@
+<div class="jumbotron text-center">
+<h1> Welcome To Buddy Boddy! </h1>
+</div>
+<% if user_is_authenticated %>
+    <h3>Hello, <%= current_user.username %></h3>
+    <%= link_to "Trainers", trainers_path %><br>
+    <%= link_to "Workouts", workouts_path %><br>
+    <%= link_to "My Profile", user_path(:user_id) %>
+    <%= button_to "Logout", logout_path, method: :delete%>
+<%end%>
+
+<%= button_to "Login", '/login', method: :get%>
+<%= button_to "Sign Up", '/users/new', method: :get%>
+<%= link_to('Log in with Github!', '/auth/github') %>

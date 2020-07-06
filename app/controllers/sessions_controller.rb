@@ -21,12 +21,13 @@ class SessionsController < ApplicationController
 
    def create_from_github
     @user = User.find_or_create_by(uid: auth['uid']) do |u|
-      u.username = auth['info']['email']
+      u.username = auth['info']['nickname']
+      u.password = SecureRandom.hex
     end 
     
     session[:user_id] = @user.id
     flash[:notice] = "Logged in with Github!"
-    render "welcome/home"
+    redirect_to user_path(@user)
     # binding.pry
     # pp request.env['omniauth.auth']
     # session[:name] = request.env['omniauth.auth']['info']['nickname']

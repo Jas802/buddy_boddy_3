@@ -6,4 +6,11 @@ class Trainer < ApplicationRecord
         self.workouts.where ('difficulty >= 4')
     end
 
+    def self.search(search)
+       if search 
+        where(['name LIKE ?', "%#{search}"])
+        else
+            Trainer.all
+        end
+    end
 end

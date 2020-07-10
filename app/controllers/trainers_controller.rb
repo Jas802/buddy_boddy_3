@@ -2,7 +2,7 @@ class TrainersController < ApplicationController
     include ApplicationHelper
     
     def index
-        @trainers = Trainer.all
+        @trainers = Trainer.search(params[:search])
     end
 
     def show
@@ -22,7 +22,8 @@ class TrainersController < ApplicationController
     def trainer_params
         params.require(:trainer).permit(
             :name,
-            :bio
+            :bio,
+            :search
         )
     end
 end

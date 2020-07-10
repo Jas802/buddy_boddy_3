@@ -2,9 +2,17 @@
 <h1> Buddy Boddy's Trainers! </h1>
 </div>
 <br>
-<%@trainers.each do |trainer|%>
-    <%=trainer.name%>
-    <%=link_to "Trainer's Bio", trainer_path(trainer) %>
+<h3> Find Your Trainer! </h3>
+    <%= form_tag(trainers_path, method: :get) do %>
+      <%= text_field_tag(:search, params[:search]) %>
+      <%= submit_tag ("Search")%>
+    <% end %>
+    <br>
+
+<% @trainers.each do |trainer| %>
+<ul>
+    <li><%=link_to trainer.name, trainer_path(trainer) %></li><br>
+</ul>    
     <% end %><br>
 
 <%= link_to "New Trainer", 'trainers/new'%>

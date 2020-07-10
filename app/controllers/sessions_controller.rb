@@ -28,15 +28,6 @@ class SessionsController < ApplicationController
     session[:user_id] = @user.id
     flash[:notice] = "Logged in with Github!"
     redirect_to user_path(@user)
-    # binding.pry
-    # pp request.env['omniauth.auth']
-    # session[:name] = request.env['omniauth.auth']['info']['nickname']
-    # session[:omniauth_data] = request.env['omniauth.auth']
-    # redirect_to root_path
-
-
-    #user = User.find_by_provider_and_uid(auth["provider"], auth["uid"]) || User.create_with_omniauth(auth)     
-    #session[:user_id] = user.id     redirect_to root_path, :notice => "Signed in!"
     end
 
   

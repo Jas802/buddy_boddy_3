@@ -1,24 +1,10 @@
-# README
+Welcome to Buddy Boddy!
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is used for tracking trainers and workouts.
+You can monitor what workouts you add as well as who is teaching them.
 
-Things you may want to cover:
+Users are able to create your own profile or log in via Github.
 
-* Ruby version
+On the user profile page, you can see what workouts you have added.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To use simply clone the repository, run 'bundle install', and then start up a local server with 'rails s'.
